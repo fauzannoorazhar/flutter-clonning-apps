@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clonning_apps/ui/views/example/google_maps_clone_page.dart';
-import 'package:flutter_clonning_apps/ui/views/goride_page.dart';
-import 'package:flutter_clonning_apps/ui/widgets/home_sliding_panel.dart';
+import 'package:flutter_clonning_apps/ui/views/home/home_sliding_panel.dart';
 import 'package:flutter_clonning_apps/utils/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -23,16 +20,6 @@ class _HomePageState extends State<HomePage> {
     Widget build(BuildContext context) {
         return Scaffold(
             backgroundColor: Colors.lightBlue[400],
-            // floatingActionButton: FloatingActionButton.extended(
-            //     onPressed: () {
-            //         return Navigator.push(
-            //             context,
-            //             MaterialPageRoute(builder: (_) => GoogleMapsClonePage())
-            //         );
-            //     },
-            //     icon: FaIcon(FontAwesomeIcons.motorcycle),
-            //     label: Text('Go Ride'),
-            // ),
             body: Column(
                 children: [
                     Container(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clonning_apps/ui/views/home_page.dart';
+import 'package:flutter_clonning_apps/ui/views/home/home_page.dart';
 
 void main() {
     runApp(MyApp());
