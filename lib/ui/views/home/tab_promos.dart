@@ -171,55 +171,52 @@ class TabPromos extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-        return Container(
-            margin: EdgeInsets.only(top: 25),
-            child: NotificationListener<OverscrollIndicatorNotification>(
-                onNotification: (overscroll) {
-                    overscroll.disallowGlow();
-                },
-                child: SingleChildScrollView(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                            Container(
-                                padding: EdgeInsets.only(left: 15, right: 15),
-                                child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                        promoCardDashboard(context, 28, 'Voucher', '8 Expiring Soon', Colors.orange),
-                                        SizedBox(width: 8),
-                                        promoCardDashboard(context, 0, 'Subscriptions', 'Active Now', Colors.blue),
-                                        SizedBox(width: 8),
-                                        promoCardDashboard(context, 0, 'Subscriptions', 'In Progress', Colors.purple),
-                                    ],
+        return NotificationListener<OverscrollIndicatorNotification>(
+            onNotification: (overscroll) {
+                overscroll.disallowGlow();
+            },
+            child: SingleChildScrollView(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        Container(
+                            padding: EdgeInsets.only(left: 15, right: 15),
+                            child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                    promoCardDashboard(context, 28, 'Voucher', '8 Expiring Soon', Colors.orange),
+                                    SizedBox(width: 8),
+                                    promoCardDashboard(context, 0, 'Subscriptions', 'Active Now', Colors.blue),
+                                    SizedBox(width: 8),
+                                    promoCardDashboard(context, 0, 'Subscriptions', 'In Progress', Colors.purple),
+                                ],
+                            ),
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                            padding: EdgeInsets.only(left: 15, right: 15),
+                            child: promoCodeEnter(context)
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                            padding: EdgeInsets.only(left: 15, right: 15),
+                            child: Text(
+                                "Promos you can't resist",
+                                style: TextStyle(
+                                    fontSize: 23,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700
                                 ),
                             ),
-                            SizedBox(height: 20),
-                            Container(
-                                padding: EdgeInsets.only(left: 15, right: 15),
-                                child: promoCodeEnter(context)
-                            ),
-                            SizedBox(height: 20),
-                            Container(
-                                padding: EdgeInsets.only(left: 15, right: 15),
-                                child: Text(
-                                    "Promos you can't resist",
-                                    style: TextStyle(
-                                        fontSize: 23,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w700
-                                    ),
-                                ),
-                            ),
-                            SizedBox(height: 20),
-                            promoGofoodList(context),
-                            SizedBox(height: 20),
-                            promoImagesList(context),
-                            SizedBox(height: 20),
-                            promoImagesList(context),
-                            SizedBox(height: 100),
-                        ],
-                    )
+                        ),
+                        SizedBox(height: 20),
+                        promoGofoodList(context),
+                        SizedBox(height: 20),
+                        promoImagesList(context),
+                        SizedBox(height: 20),
+                        promoImagesList(context),
+                        SizedBox(height: 100),
+                    ],
                 )
             )
         );
