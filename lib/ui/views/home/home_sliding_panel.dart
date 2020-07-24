@@ -18,6 +18,7 @@ class HomeSlidingPanel extends StatelessWidget {
     Widget build(BuildContext context) {
         return SlidingUpPanel(
             controller: this.panelController,
+            defaultPanelState: PanelState.OPEN,
             minHeight: 200,
             isDraggable: true,
             maxHeight: MediaQuery.of(context).size.height,

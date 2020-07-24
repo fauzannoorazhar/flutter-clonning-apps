@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
     bool panelState = false;
-    PanelController panelController = new PanelController();
     int _selectedIndex = 0;
 
     @override
