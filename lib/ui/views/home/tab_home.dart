@@ -60,7 +60,7 @@ class TabHome extends StatelessWidget {
     Widget iconMainMenu(BuildContext context) {
         return Container(
             margin: EdgeInsets.only(left: 15, right: 15),
-            height: 140,
+            height: 120,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 color: Colors.blue[400],
@@ -71,7 +71,7 @@ class TabHome extends StatelessWidget {
         );
     }
 
-    Widget listPicksButton() {
+    Widget listPicksChips() {
         return Container(
             height: 35,
             alignment: Alignment.center,
@@ -86,7 +86,8 @@ class TabHome extends StatelessWidget {
                             label: Text(
                                 listNameTopPicks[index],
                                 style: TextStyle(
-                                    color: (index == 0) ? Colors.white : Colors.black
+                                    color: (index == 0) ? Colors.white : Colors.black,
+                                    fontSize: 12
                                 ),
                             ),
                             shape: RoundedRectangleBorder(
@@ -104,30 +105,60 @@ class TabHome extends StatelessWidget {
         );
     }
 
+    Widget promoImagesList(BuildContext context) {
+        return Container(
+            margin: EdgeInsets.only(left: 15, right: 15),
+            height: 200,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                        'lib/assets/images/source-gojek/image-promo.jpg',
+                    ),
+                    fit: BoxFit.fill
+                ),
+                color: Colors.blue,
+                borderRadius: BorderRadius.all(
+                    Radius.circular(15)
+                )
+            ),
+        );
+    }
+
     @override
     Widget build(BuildContext context) {
-        return Container(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                    orderSearch(),
-                    SizedBox(height: 20),
-                    iconMainMenu(context),
-                    SizedBox(height: 20),
-                    Container(
-                        margin: EdgeInsets.only(left: 15, right: 15),
-                        child: Text(
-                            "Top picks for you",
-                            style: TextStyle(
-                                fontSize: 23,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700
+        return NotificationListener<OverscrollIndicatorNotification>(
+            onNotification: (overscroll) {
+                overscroll.disallowGlow();
+            },
+            child: SingleChildScrollView(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        orderSearch(),
+                        SizedBox(height: 20),
+                        iconMainMenu(context),
+                        SizedBox(height: 20),
+                        Container(
+                            margin: EdgeInsets.only(left: 15, right: 15),
+                            child: Text(
+                                "Top picks for you",
+                                style: TextStyle(
+                                    fontSize: 23,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700
+                                ),
                             ),
                         ),
-                    ),
-                    SizedBox(height: 20),
-                    listPicksButton()
-                ]
+                        SizedBox(height: 20),
+                        listPicksChips(),
+                        SizedBox(height: 20),
+                        promoImagesList(context),
+                        SizedBox(height: 20),
+                        promoImagesList(context),
+                        SizedBox(height: 100),
+                    ]
+                )
             )
         );
     }
