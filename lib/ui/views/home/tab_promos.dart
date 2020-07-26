@@ -127,7 +127,6 @@ class TabPromos extends StatelessWidget {
                 SizedBox(height: 10),
                 Container(
                     height: 250,
-                    padding: EdgeInsets.only(left: 15),
                     child: NotificationListener<OverscrollIndicatorNotification>(
                         onNotification: (overscroll) {
                             overscroll.disallowGlow();
@@ -136,10 +135,13 @@ class TabPromos extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: 4,
                             itemBuilder: (BuildContext context, int index) {
-                                return CardGoFood(
-                                    titleImage: 'Warko Makyus Pisan Euy',
-                                    title: 'Kopi Susu Khas Toraja Manyuks',
-                                    price: '11.000',
+                                return Padding(
+                                    padding: EdgeInsets.only(right: 0, left: (index == 0) ? 10 : 0),
+                                    child: CardGoFood(
+                                        titleImage: 'Warko Makyus Pisan Euy',
+                                        title: 'Kopi Susu Khas Toraja Manyuks',
+                                        price: '11.000',
+                                    ),
                                 );
                             },
                         ),
