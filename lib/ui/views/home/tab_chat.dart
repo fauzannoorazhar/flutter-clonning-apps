@@ -113,7 +113,7 @@ class CircleIcon extends StatelessWidget {
 
     CircleIcon({
         @required this.icon,
-        @required this.title,
+        this.title,
         this.backgroundColor,
         this.onPressed,
     });

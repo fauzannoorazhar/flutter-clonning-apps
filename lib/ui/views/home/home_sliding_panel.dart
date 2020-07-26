@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clonning_apps/ui/views/example/google_maps_clone_page.dart';
 import 'package:flutter_clonning_apps/ui/views/goride_page.dart';
 import 'package:flutter_clonning_apps/ui/views/home/tab_chat.dart';
+import 'package:flutter_clonning_apps/ui/views/home/tab_home.dart';
 import 'package:flutter_clonning_apps/ui/views/home/tab_promos.dart';
 import 'package:flutter_clonning_apps/ui/widgets/card_go_food.dart';
 import 'package:flutter_clonning_apps/utils/constants.dart';
@@ -41,9 +42,7 @@ class HomeSlidingPanel extends StatelessWidget {
         if (this.indexTab == indexTabPromos) {
             return TabPromos();
         } else if (this.indexTab == indexTabHome) {
-            return Container(
-                child: Text('Home'),
-            );
+            return TabHome();
         } else {
             return TabChat();
         }
